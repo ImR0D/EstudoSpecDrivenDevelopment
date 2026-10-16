@@ -2,12 +2,20 @@
   "name": "agentclinic",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "validate": "npm test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "fastify": "^5.6.1"
+  },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.12",
     "typescript": "^5.5.3"
   },
   "private": true
