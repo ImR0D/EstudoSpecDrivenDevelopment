@@ -5,7 +5,7 @@ const { join } = require("node:path");
 const { afterEach, test } = require("node:test");
 const { openDatabase } = require("../dist/database/database");
 const { ClinicRepository } = require("../dist/data/clinic-repository");
-const { buildServer } = require("../dist/server");
+const { buildServer } = require("../dist/app");
 
 const temporaryDirectories = [];
 
@@ -31,8 +31,17 @@ test("home page responds at / with informational, responsive HTML", async () => 
     assert.match(response.body, /AgentClinic/);
     assert.match(response.body, /agent wellbeing/);
     assert.match(response.body, /name="viewport"/);
+    assert.match(response.body, /href="\/home\.css"/);
     assert.doesNotMatch(response.body, /<script\b/i);
+    assert.doesNotMatch(response.body, /<style\b/i);
     assert.doesNotMatch(response.body, /book an appointment/i);
+
+    const stylesheet = await server.inject({ method: "GET", url: "/home.css" });
+    assert.equal(stylesheet.statusCode, 200);
+    assert.match(stylesheet.headers["content-type"], /text\/css/);
+    assert.match(stylesheet.body, /@media|clamp\(/);
+    assert.match(stylesheet.body, /article \.eyebrow/);
+    assert.doesNotMatch(stylesheet.body, /\$page-background/);
   } finally {
     await server.close();
   }

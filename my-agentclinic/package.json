@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node scripts/copy-views.cjs && sass src/views/home.scss dist/views/home.css --no-source-map",
     "start": "node dist/server.js",
     "test": "npm run build && node --test tests/*.test.cjs",
     "validate": "npm test"
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.18.12",
+    "sass": "^1.93.2",
     "typescript": "^5.5.3"
   },
   "private": true

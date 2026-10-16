@@ -38,6 +38,13 @@ The test command builds the TypeScript first, then checks the home page,
 database initialization, persistence, relationships, and database constraints.
 `npm run validate` is an alias for the same complete check.
 
+Application code is organized by responsibility: HTML templates (`.html`) and
+SCSS source styles (`.scss`) live in `src/views`. The build compiles SCSS into
+`dist/views/home.css`, which the server delivers to browsers. HTTP routes live
+in `src/routes`, application functionality in `src/app.ts` and `src/server.ts`,
+database access in `src/data`, domain types in `src/models`, and database
+initialization in `src/database`.
+
 ## Initial schema assumptions
 
 - An agent can have many ailments, and an ailment can affect many agents;

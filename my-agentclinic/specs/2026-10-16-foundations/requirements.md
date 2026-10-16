@@ -40,6 +40,10 @@ Establish the TypeScript project foundation, a lightweight SQLite data layer for
 7. The application must serve a minimal home page at `/` that identifies AgentClinic and briefly introduces its purpose.
 8. The home page must use a browser-friendly layout, work at common desktop and mobile viewport widths, and remain usable without JavaScript when implemented as a server-rendered page.
 9. The home page must not imply that appointment booking, therapy management, or other workflows are already available.
+10. HTML templates and SCSS stylesheet sources must be stored in separate files; templates must not contain inline style blocks. Source stylesheet files must use the `.scss` extension and compile to browser-ready CSS during build.
+11. Route handling and application functionality must remain in TypeScript modules separate from HTML templates and styles.
+12. Domain model interfaces/types must be defined in dedicated model files and imported by data-access code.
+13. These component boundaries apply to all subsequent features and code changes, not only the foundation home page; future stylesheet sources must use `.scss`.
 
 ## Out of scope
 

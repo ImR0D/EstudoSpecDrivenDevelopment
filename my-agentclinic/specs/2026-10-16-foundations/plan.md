@@ -12,7 +12,8 @@
 1. Add the smallest locally runnable server/page setup needed to serve the home page at `/`, following the existing TypeScript and tech-stack guidance.
 2. Present AgentClinic's name and a concise, friendly introduction to its agent-care purpose.
 3. Use a simple responsive, browser-friendly layout that works without JavaScript if server-rendered.
-4. Keep the page informational; do not add dashboard features, additional routes, or functional booking and care-management flows.
+4. Keep the HTML template and `.scss` source stylesheet in separate files; compile styles to browser-ready CSS during the build. Keep route and server functionality in TypeScript modules.
+5. Keep the page informational; do not add dashboard features, additional routes, or functional booking and care-management flows.
 
 ## Task Group 3: Define and initialize the SQLite schema
 
@@ -33,3 +34,4 @@
 2. Wire the checks into project scripts using the existing tooling where practical.
 3. Document the local setup and commands needed to install, build, run the home page locally, and validate the foundation.
 4. Run the documented clean-install, build, and validation steps and resolve failures caused by this phase.
+5. Verify future-facing component boundaries: separate HTML templates, `.scss` source stylesheets, TypeScript functionality, persistence, and model types into their designated files.

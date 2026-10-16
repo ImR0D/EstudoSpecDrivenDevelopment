@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "AgentClinic: npm start",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"my-agentclinic",
+				"start"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

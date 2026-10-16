@@ -1,40 +1,8 @@
 import type Database from "better-sqlite3";
-
-export interface Agent {
-  id: number;
-  name: string;
-  created_at: string;
-}
-
-export interface Ailment {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface Therapy {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface Appointment {
-  id: number;
-  agent_id: number;
-  therapy_id: number | null;
-  scheduled_at: string;
-  status: "scheduled" | "completed" | "cancelled";
-  notes: string;
-  created_at: string;
-}
-
-export interface NewAppointment {
-  agentId: number;
-  therapyId?: number | null;
-  scheduledAt: string;
-  status?: Appointment["status"];
-  notes?: string;
-}
+import type { Agent } from "../models/agent";
+import type { Ailment } from "../models/ailment";
+import type { Appointment, NewAppointment } from "../models/appointment";
+import type { Therapy } from "../models/therapy";
 
 export class ClinicRepository {
   constructor(private readonly database: Database.Database) {}
