@@ -45,6 +45,10 @@ in `src/routes`, application functionality in `src/app.ts` and `src/server.ts`,
 database access in `src/data`, domain types in `src/models`, and database
 initialization in `src/database`.
 
+The home page layout is composed from separate header, main-content, and footer
+components in `src/views/components`; `src/views/layout.ts` assembles them using
+the page-shell template in `src/views/templates/layout.html`.
+
 ## Initial schema assumptions
 
 - An agent can have many ailments, and an ailment can affect many agents;

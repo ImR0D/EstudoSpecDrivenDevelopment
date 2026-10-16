@@ -13,7 +13,9 @@
 2. Present AgentClinic's name and a concise, friendly introduction to its agent-care purpose.
 3. Use a simple responsive, browser-friendly layout that works without JavaScript if server-rendered.
 4. Keep the HTML template and `.scss` source stylesheet in separate files; compile styles to browser-ready CSS during the build. Keep route and server functionality in TypeScript modules.
-5. Keep the page informational; do not add dashboard features, additional routes, or functional booking and care-management flows.
+5. Implement a shared page layout composed of separate header, main-content, and footer components.
+6. Keep the header, main-content, and footer components in their own files; compose them through a layout module rather than embedding their markup in route code.
+7. Keep the page informational; do not add dashboard features, additional routes, or functional booking and care-management flows.
 
 ## Task Group 3: Define and initialize the SQLite schema
 
@@ -34,4 +36,5 @@
 2. Wire the checks into project scripts using the existing tooling where practical.
 3. Document the local setup and commands needed to install, build, run the home page locally, and validate the foundation.
 4. Run the documented clean-install, build, and validation steps and resolve failures caused by this phase.
-5. Verify future-facing component boundaries: separate HTML templates, `.scss` source stylesheets, TypeScript functionality, persistence, and model types into their designated files.
+5. Verify that the home page renders the header, main-content, and footer in order and serves the compiled stylesheet.
+6. Verify future-facing component boundaries: separate HTML templates, `.scss` source stylesheets, TypeScript functionality, persistence, and model types into their designated files.

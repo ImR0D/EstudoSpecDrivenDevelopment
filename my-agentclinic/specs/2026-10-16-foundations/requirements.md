@@ -43,7 +43,8 @@ Establish the TypeScript project foundation, a lightweight SQLite data layer for
 10. HTML templates and SCSS stylesheet sources must be stored in separate files; templates must not contain inline style blocks. Source stylesheet files must use the `.scss` extension and compile to browser-ready CSS during build.
 11. Route handling and application functionality must remain in TypeScript modules separate from HTML templates and styles.
 12. Domain model interfaces/types must be defined in dedicated model files and imported by data-access code.
-13. These component boundaries apply to all subsequent features and code changes, not only the foundation home page; future stylesheet sources must use `.scss`.
+13. The shared page layout must contain header, main-content, and footer components, and each component must be defined in its own file.
+14. These component boundaries apply to all subsequent features and code changes, not only the foundation home page; future stylesheet sources must use `.scss`.
 
 ## Out of scope
 

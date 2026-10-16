@@ -16,13 +16,42 @@ $card-border-color: #dce7df;
 }
 
 body {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
   min-width: 320px;
+  margin: 0;
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem clamp(1.25rem, 6vw, 4rem);
+}
+
+.site-header {
+  border-bottom: 1px solid $card-border-color;
+  background: #fff;
+
+  .site-brand {
+    color: $text-color;
+    font-size: 1.1rem;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .site-label {
+    color: $muted-text-color;
+    font-size: .9rem;
+  }
 }
 
 main {
   display: grid;
-  min-height: 100svh;
+  flex: 1;
   place-items: center;
   padding: 2rem 1.25rem;
 }
@@ -69,5 +98,24 @@ article {
     color: #315d46;
     font-size: .9rem;
     font-weight: 600;
+  }
+}
+
+.site-footer {
+  justify-content: center;
+  border-top: 1px solid $card-border-color;
+  color: $muted-text-color;
+  font-size: .9rem;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

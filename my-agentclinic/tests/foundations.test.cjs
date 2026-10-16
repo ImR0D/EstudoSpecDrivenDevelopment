@@ -32,6 +32,17 @@ test("home page responds at / with informational, responsive HTML", async () => 
     assert.match(response.body, /agent wellbeing/);
     assert.match(response.body, /name="viewport"/);
     assert.match(response.body, /href="\/home\.css"/);
+    assert.match(response.body, /<header class="site-header">/);
+    assert.match(response.body, /<main id="main-content">/);
+    assert.match(response.body, /<footer class="site-footer">/);
+    assert.ok(
+      response.body.indexOf("<header") < response.body.indexOf("<main"),
+      "header should appear before main content",
+    );
+    assert.ok(
+      response.body.indexOf("<main") < response.body.indexOf("<footer"),
+      "main content should appear before footer",
+    );
     assert.doesNotMatch(response.body, /<script\b/i);
     assert.doesNotMatch(response.body, /<style\b/i);
     assert.doesNotMatch(response.body, /book an appointment/i);

@@ -13,6 +13,7 @@ Use Fastify as the server-side TypeScript framework for routing and API structur
 - Keep the interface modern, responsive, and browser-friendly.
 - Store each HTML template in its own `.html` file and each stylesheet source in a separate `.scss` file; do not embed styles in HTML or templates in TypeScript.
 - Compile SCSS to browser-ready CSS as part of the build; generated `.css` files belong in `dist`, not alongside source files.
+- Compose page layouts from separate header, main-content, and footer components, with each component kept in its own file.
 - Keep route handling and application functionality in TypeScript modules, separate from view and style files.
 - Define domain models/interfaces in dedicated files under `src/models`; import them into data-access code rather than defining them in repositories.
 
