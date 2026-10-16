@@ -1,9 +1,11 @@
 # Roadmap
 
 ## Phase 1: Foundations
+- **Status: Complete**
 - Initialize the TypeScript project and confirm the build tooling works.
 - Set up the project structure and basic configuration.
 - Add SQLite and define the initial schema for agents, ailments, therapies, and appointments.
+- Create the informational home page with a shared layout composed of separate header, main, and footer components.
 
 ## Phase 2: Core app shell
 - Create the server-side app skeleton.
